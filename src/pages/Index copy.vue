@@ -4,11 +4,15 @@
       <header>
         <div class="max-w-xl md:max-w-3xl xl:max-w-4xl mx-auto text-center px-6 py-10 md:py-32 border-b border-gray-300">
           <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-1">
-            <g-link to="/" class="text-black">Flutter Indonesia </g-link>
+            <g-link to="/" class="text-black">Bleda</g-link>
           </h1>
-          <p class="text-gray-700 text-lg sm:text-3xl">Coming Soon ( Website masih dalam tahap development )</p>
+          <p class="text-gray-700 text-lg sm:text-3xl">Thoughts, stories, and ideas.</p>
         </div>
       </header>
+      <section>
+        <post-item v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" />
+      </section>
+      <pagination :info="$page.posts.pageInfo" v-if="$page.posts.pageInfo.totalPages > 1" />
       <site-footer class="py-8 sm:py-16" />
     </main>
   </Layout>
@@ -28,7 +32,7 @@ export default {
   },
   metaInfo () {
     return {
-      title: 'Under Construction',
+      title: this.config.siteName,
       meta: [
         { property: "og:type", content: 'website' },
         { property: "og:title", content: this.config.siteName },
