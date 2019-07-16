@@ -2,6 +2,7 @@
   <Layout class="bg-white">
     <main>
       <header>
+        <Nav />
         <div class="max-w-xl md:max-w-3xl xl:max-w-4xl mx-auto text-center px-6 py-10 md:py-32 border-b border-gray-300">
           <h1 class="text-4xl sm:text-5xl md:text-6xl font-sans font-bold mb-1">
             <g-link to="/" class="text-black">Bleda</g-link>
@@ -23,12 +24,14 @@ import config from '~/.temp/config.js'
 import SiteFooter from '@/components/Footer'
 import PostItem from '@/components/PostItem'
 import Pagination from '@/components/Pagination'
+import Nav from '@/components/Nav';
 
 export default {
   components: {
     PostItem,
     Pagination,
     SiteFooter,
+    Nav
   },
   metaInfo () {
     return {
